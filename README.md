@@ -1,5 +1,5 @@
 # MarsRover
 MarsRover
 
-java13 ve üzeri versiyolnlar ile çalıştırılmalıdır.
+java13 ve üzeri versiyonlar ile çalıştırılmalıdır.
 
