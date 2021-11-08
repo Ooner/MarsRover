@@ -1,3 +1,10 @@
+package main;
+
+import commands.RoverCommand;
+import factories.RoverCommandFactory;
+import factories.RoverStateFactory;
+import states.RoverState;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -8,7 +15,6 @@ public class MarsRover {
         String[] sizes = sc.nextLine().split(" ");
         Coordinate.maxX = Integer.parseInt(sizes[0]);
         Coordinate.maxY = Integer.parseInt(sizes[1]);
-        ArrayList<Rover> rovers = new ArrayList<>();
         HashMap<Rover,ArrayList<RoverCommand>> roverCommandsMap = new HashMap<>();
 
         while (!sc.hasNext("exit")) {
