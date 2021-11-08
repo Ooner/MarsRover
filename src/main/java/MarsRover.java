@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class MarsRover {
@@ -8,6 +9,7 @@ public class MarsRover {
         Coordinate.maxX = Integer.parseInt(sizes[0]);
         Coordinate.maxY = Integer.parseInt(sizes[1]);
         ArrayList<Rover> rovers = new ArrayList<>();
+        HashMap<Rover,ArrayList<RoverCommand>> roverCommandsMap = new HashMap<>();
 
         while (!sc.hasNext("exit")) {
             String[] roverPos = sc.nextLine().split(" ");
@@ -17,12 +19,14 @@ public class MarsRover {
             Coordinate coordinate = new Coordinate(x,y);
             RoverState roverState = RoverStateFactory.createRoverState(coordinate,direction);
             String commands = sc.nextLine();
-            rovers.add(new Rover(roverState,commands));
+            Rover rover = new Rover(roverState);
+            ArrayList<RoverCommand> roverRoverCommands = RoverCommandFactory.createRoverCommand(rover,commands);
+            roverCommandsMap.put(rover, roverRoverCommands);
         }
 
-        for(Rover rover:rovers ) {
-            rover.process();
-            System.out.println(rover.toString());
-        }
+        roverCommandsMap.forEach((k, v) -> {
+            v.forEach(RoverCommand::execute);
+            System.out.println(k.toString());
+        });
     }
 }
