@@ -1,3 +1,7 @@
+package factories;
+
+import constants.Constants;
+import main.Coordinate;
 import states.*;
 
 public class RoverStateFactory {

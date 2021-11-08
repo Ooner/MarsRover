@@ -1,3 +1,7 @@
+package states;
+
+import main.Coordinate;
+
 public abstract class RoverState {
     public Coordinate coordinate;
 

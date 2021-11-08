@@ -1,3 +1,8 @@
+package states;
+
+import constants.Constants;
+import main.Coordinate;
+
 public class RoverEastState extends RoverState{
     public RoverEastState(Coordinate coordinate){
         super( coordinate);

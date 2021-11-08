@@ -1,3 +1,7 @@
+package commands;
+
+import main.Rover;
+
 public class RoverMoveCommand extends AbstractRoverCommand {
     public RoverMoveCommand(Rover rover){
         super(rover);

@@ -1,3 +1,5 @@
+package main;
+
 import states.RoverState;
 
 public class Rover {
