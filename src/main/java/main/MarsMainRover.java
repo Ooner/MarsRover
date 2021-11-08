@@ -30,9 +30,9 @@ public class MarsMainRover {
             roverCommandsMap.put(rover, roverRoverCommands);
         }
 
-        roverCommandsMap.forEach((k, v) -> {
-            v.forEach(RoverCommand::execute);
-            System.out.println(k.toString());
+        roverCommandsMap.forEach((rover, roverCommands) -> {
+            roverCommands.forEach(RoverCommand::execute);
+            System.out.println(rover.toString());
         });
     }
 }
